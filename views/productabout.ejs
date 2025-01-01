@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aboutproduct</title>
+    <link href="style.css" rel="stylesheet">
+    
+
+   
+
+    
+</head>
+<body>
+    <%- include ('partials/header.ejs') %>
+    <div class="content">
+        <div class="productabout">
+            <% if (blogs.length >0) { %>
+
+                <% blogs.forEach(blog => { %>
+                    <h3><%= blog.About %></h3>
+
+                <%})%>
+                <% } else { %>
+                    <p>There are  no blogs to display</p>
+
+                <%}%>
+
+        </div>
+        <div class="productabout">
+
+        </div>
+        <div class="productabout">
+
+        </div>
+    </div>
+    
+</body>
+</html>

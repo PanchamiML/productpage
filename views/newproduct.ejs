@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newproduct</title>
+    <link href="style.css" rel="stylesheet">
+   
+
+</head>
+
+<body>
+    <%- include ('partials/header.ejs') %>
+    <div class="formcontent">
+        <form action="/" method="post">
+            <label style="margin-top: 10px;" >Product</label>
+            <br>
+            <input type="text" style="height: 50px; width: 400px; border-color: aqua" name="Product">
+            <br>
+            <label style="margin-top: 10px;">About</label>
+            <br>
+            <input type="text" style="height: 150px; width: 400px; border-color: aqua" name="About">
+            <br>
+            <label style="margin-top: 10px;">Remarks</label>
+            <br>
+            <input type="text" style="height: 100px; width: 400px; border-color: aqua" name="Remarks">
+            <br>
+            <button style="height: 50px; width: 70px; background-color: aqua; margin-top: 10px;">Submit</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
