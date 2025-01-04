@@ -33,11 +33,37 @@
         <div class="product">
             
         </div> -->
-        
-            
+        </div>
 
+        <script>
+            // Add event listener to dynamically handle all delete buttons
+            document.addEventListener("click", (e) => {
+                if (e.target.classList.contains("delete")) {
+                    e.preventDefault(); // Prevent default behavior of the link
+                    
+                    // Get the blog ID from the data-doc attribute
+                    const blogId = e.target.dataset.doc;
         
-    </div>
+                    // Create the endpoint dynamically
+                    const endpoint = `/${blogId}`;
+        
+                    // Send the DELETE request using fetch
+                    fetch(endpoint, { method: 'DELETE' })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data); // Log server response
+                            if (data.redirect) {
+                                // If a redirect URL is sent from the server, navigate to it
+                                window.location.href = data.redirect;
+                            } else {
+                                // Optionally, remove the element from the DOM without refreshing
+                                e.target.parentElement.remove();
+                            }
+                        })
+                        .catch((err) => console.log("Error:", err));
+                }
+            });
+        </script>
     
 </body>
 </html>

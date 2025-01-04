@@ -74,3 +74,23 @@ app.post('/',(req,res) => {
         console.log(err);
     })
 })
+
+
+app.delete("/:id", (req, res) => {
+    const id = req.params.id; // Get the blog ID from the request parameters
+
+    Blog.findByIdAndDelete(id) // Use Mongoose to find and delete the document
+        .then((result) => {
+            if (result) {
+                console.log("Deleted Blog:", result);
+                res.json({ redirect: "/" }); // Respond with JSON, optionally send redirect URL
+            } else {
+                res.status(404).json({ error: "Blog not found" }); // Handle case where blog is not found
+            }
+        })
+        .catch((err) => {
+            console.error("Error deleting blog:", err);
+            res.status(500).json({ error: "Internal Server Error" });
+        });
+});
+
