@@ -18,19 +18,22 @@
 
                 <% blogs.forEach(blog => { %>
                     <h3><%= blog.Product %></h3>
+                    <a class="delete" data-doc="<%= blog._id %>">Delete</a>
 
                 <%})%>
                 <% } else { %>
                     <p>There are  no blogs to display</p>
 
                 <%}%>
+                
             </div>
-        <div class="product">
+        <!-- <div class="product">
 
         </div>
         <div class="product">
             
-        </div>
+        </div> -->
+        
             
 
         

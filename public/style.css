@@ -28,7 +28,19 @@ body{
     border: solid;
     border-color: aqua;
     margin-top: 10px;
+    position: relative;
 }
+.delete{
+    position: relative;
+    margin-top: 0;
+    margin-right: 0;
+    border-radius: 50%;
+    
+}
+.delete:hover{
+    cursor: pointer;
+}
+
 .productabout{
     height: 200px;
     width: 80%;
